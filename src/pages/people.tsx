@@ -15,17 +15,37 @@ const API_URL = import.meta.env.VITE_API_URL
 // 2. Definición de columnas
 const columns: ColumnDef<any>[] = [
   {
-    header: 'ID',
-    accessorKey: 'id',
-  },
-  {
     header: 'Name',
-    accessorKey: 'name',
+    accessorKey: 'name'
   },
   {
     header: 'Height',
-    accessorKey: 'height',
+    accessorKey: 'height'
   },
+  {
+    header: 'Mass',
+    accessorKey: 'mass'
+  },
+  {
+    header: 'Hair Color',
+    accessorKey: 'hair_color'
+  },
+  {
+    header: 'Skin Color',
+    accessorKey: 'skin_color'
+  },
+  {
+    header: 'Eye Color',
+    accessorKey: 'eye_color'
+  },
+  {
+    header: 'Birth Year',
+    accessorKey: 'birth_year'
+  },
+  {
+    header: 'Gender',
+    accessorKey: 'gender'
+  }
 ]
 
 // 3. Compon
@@ -36,7 +56,7 @@ const People = () => {
   const [page, changePage] = useState<number>(1);
   const [searchInput, setSearchInput] = useState<string>('');
 
-  useEffect(() => {
+  const getAndSetTableContent = (page : number, searchInput : string) => {
     const params = {page : page, size : 15}
     if (searchInput !== '') {
       params['search'] = searchInput;
@@ -45,7 +65,15 @@ const People = () => {
     .then(data => {
       setPeople(data);
     })
+  }
+
+  useEffect(() => {
+    getAndSetTableContent(page, searchInput);
   }, [page])
+
+  useEffect(() => {
+    getAndSetTableContent(1, searchInput);
+  }, [searchInput])
 
   return (
     <>

@@ -15,7 +15,7 @@ const Table = ({data, columns, changePage}) => {
     data : data.items,
     columns : columns,
     manualPagination: true,
-    pageCount: data.total,
+    pageCount: data.pages,
     state: {
       pagination: {
         pageIndex : data.page - 1,
@@ -53,7 +53,7 @@ const Table = ({data, columns, changePage}) => {
     </table>
     <Pagination
       currentPage={data.page}
-      numPages={data.size}
+      numPages={data.pages}
       changePage={changePage}
     />
     </div>
