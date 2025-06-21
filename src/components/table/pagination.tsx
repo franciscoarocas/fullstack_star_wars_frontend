@@ -3,7 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 const TablePagination = ({currentPage, numPages, changePage}) => {
 
-  const generatePaginatorItems = (currentPage, numPages, changePage) => {
+  const generatePaginatorItems = (currentPage : number, numPages : number, changePage : Function) => {
 
     const pageRanks = [
       currentPage - 2,

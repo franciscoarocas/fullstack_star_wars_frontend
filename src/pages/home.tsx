@@ -10,14 +10,26 @@ import Button from '../components/button/button';
 
 import { Link } from 'react-router-dom'
 
+import Logo from '../components/logo/logo';
+
 const Home = () => {
 
   return (
     <Container fluid style={{ height : '100%'}}>
-      <Row style={{ 
-        height: '100%', 
-        display: 'flex', 
-        alignItems: 'center', 
+      <div style={{
+        position: 'absolute',
+        'top' : 0,
+        'left' : '50%',
+        transform: 'translateX(-50%)',
+        borderBottomLeftRadius: '4px',
+        borderBottomRightRadius: '4px'
+      }}>
+        <Logo/>
+      </div>
+      <Row style={{
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
       }}>
         <Col style={{
@@ -44,9 +56,11 @@ const Home = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <Button>
-            Planets
-          </Button>
+          <Link to="/planets">
+            <Button>
+              Planets
+            </Button>
+          </Link>
         </Col>
       </Row>
     </Container>

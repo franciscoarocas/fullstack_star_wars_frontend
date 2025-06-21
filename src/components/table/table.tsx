@@ -51,11 +51,13 @@ const Table = ({data, columns, changePage}) => {
         ))}
       </tbody>
     </table>
-    <Pagination
-      currentPage={data.page}
-      numPages={data.pages}
-      changePage={changePage}
-    />
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Pagination
+        currentPage={data.page}
+        numPages={data.pages}
+        changePage={changePage}
+      />
+    </div>
     </div>
   )
 
