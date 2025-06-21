@@ -3,8 +3,9 @@ import { Form, InputGroup } from 'react-bootstrap'
 
 import { FaSearch, FaRegTimesCircle  } from "react-icons/fa";
 
+import type { SearchProps } from '../../types/search';
 
-const SearchBar = ({ value, onChange }) => {
+const SearchBar = ({ value, onChange } : SearchProps) => {
 
   return (
     <InputGroup className="mb-3">

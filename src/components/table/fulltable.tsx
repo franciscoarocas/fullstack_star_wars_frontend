@@ -14,11 +14,14 @@ import background from '../../assets/background.jpg';
 
 import { Row, Col } from 'react-bootstrap';
 
+import type { FullTableProps } from '../../types/table';
+
+
 const API_URL = import.meta.env.VITE_API_URL
 
 
 
-const FullTable = ({endpointPath, columns}) => {
+const FullTable = ({endpointPath, columns} : FullTableProps) => {
 
   const [data, setData] = useState({ items: [], size : 1, page : 1 });
   const [page, setPage] = useState<number>(1);
@@ -57,7 +60,7 @@ const FullTable = ({endpointPath, columns}) => {
     }}>
     <Row>
       <Col>
-        <Direction onChange={setDirection}/>
+        <Direction onChange={(value: string) => setDirection(value as API_Direction)}/>
       </Col>
       <Col>
         <SearchBar value={searchInput} onChange ={setSearchInput}/>

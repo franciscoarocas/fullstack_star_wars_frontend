@@ -1,7 +1,9 @@
 
 import { Button as ReactButtom } from "react-bootstrap";
 
-const Button = ({children}) => {
+import type { buttonProps } from "../../types/button";
+
+const Button = ({children} : buttonProps) => {
 
     return (
         <ReactButtom variant="light" size="lg">

@@ -1,7 +1,9 @@
 
 import Form from 'react-bootstrap/Form';
 
-const DirectionSelect = ({onChange}) => {
+import type { DirectionSelectProps } from '../../types/direction';
+
+const DirectionSelect = ({onChange} : DirectionSelectProps) => {
 
   return (
     <Form.Select aria-label="Default select example" onChange={(e) => onChange(e.target.value)}>

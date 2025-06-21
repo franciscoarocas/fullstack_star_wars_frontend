@@ -1,7 +1,9 @@
 
 import Pagination from 'react-bootstrap/Pagination';
 
-const TablePagination = ({currentPage, numPages, changePage}) => {
+import type { paginationProps } from '../../types/pagination';
+
+const TablePagination = ({currentPage, numPages, changePage} : paginationProps) => {
 
   const generatePaginatorItems = (currentPage : number, numPages : number, changePage : Function) => {
 

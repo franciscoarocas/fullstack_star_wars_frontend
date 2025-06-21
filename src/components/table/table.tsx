@@ -8,8 +8,10 @@ import {
 
 import Pagination from './pagination';
 
+import type { TableProps } from '../../types/table';
 
-const Table = ({data, columns, changePage}) => {
+
+const Table = ({data, columns, changePage} : TableProps) => {
 
   const table = useReactTable({
     data : data.items,
