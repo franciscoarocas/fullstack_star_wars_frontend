@@ -24,7 +24,7 @@ const Home = () => {
         borderBottomLeftRadius: '4px',
         borderBottomRightRadius: '4px'
       }}>
-        <Logo/>
+        <Logo type='home' />
       </div>
       <Row style={{
         height: '100%',

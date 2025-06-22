@@ -10,8 +10,6 @@ import HttpClient from '../../api/default';
 
 import type { API_Params, API_Direction } from '../../types/table';
 
-import background from '../../assets/background.jpg';
-
 import Loader from '../loader/loader';
 
 import { Row, Col } from 'react-bootstrap';
@@ -59,8 +57,6 @@ const FullTable = ({endpointPath, columns} : FullTableProps) => {
 
   return (
     <div style={{
-      backgroundImage : `url(${background})`,
-      backgroundSize: 'cover',
       padding: '2rem',
       height: '100%'
     }}>

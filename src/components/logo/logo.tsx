@@ -1,11 +1,17 @@
 
-import logo from '../../assets/star_wars_logo.png';
 
-const Logo = () => {
+import type { LogoType } from '../../types/logo';
+import { LOGOS } from '../../types/logo';
+
+const Logo = ({type = 'default'} : LogoType) => {
+
+  const logo_path : string = LOGOS[type] || LOGOS.default;
+
+  console.log('Logo path:', type);
 
   return (
     <div>
-      <img src={logo} alt="Star Wars logo" style={{borderRadius : '0 10px'}}/>
+      <img className='img-fluid' src={logo_path} alt="Star Wars logo"/>
     </div>
   )
 
