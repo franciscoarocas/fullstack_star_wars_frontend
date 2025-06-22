@@ -5,9 +5,9 @@ const Loader = () => {
 
   return (
     <div>
-      <Spinner animation="border" variant="light" />;
-      <Spinner animation="border" variant="light" />;
-      <Spinner animation="border" variant="light" />;
+      <Spinner data-testid="loader" animation="border" variant="light" />
+      <Spinner data-testid="loader" animation="border" variant="light" />
+      <Spinner data-testid="loader" animation="border" variant="light" />
     </div>
   )
 
