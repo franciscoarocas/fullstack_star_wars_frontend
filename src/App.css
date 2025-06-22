@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.pagination a:link {
+  color: var(--bs-gray-dark);
+  text-decoration: none;
+}
+
+.pagination .page-link {
+  color: var(--bs-gray-dark);
+}
+
+.pagination .page-link:hover, .active > .page-link {
+  background-color: var(--bs-gray-dark);
+  color: white;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--bs-gray-dark);
+  border-color: var(--bs-gray-dark);
+  color: white;
+}
