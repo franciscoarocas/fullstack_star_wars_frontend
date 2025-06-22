@@ -41,5 +41,13 @@ export const planetsColumns: ColumnDef<any>[] = [
   {
     header: "Population",
     accessorKey: 'population'
+  },
+  {
+    header: 'Created',
+    accessorKey: 'created'
+  },
+  {
+    header: 'Edited',
+    accessorKey: 'edited'
   }
 ]

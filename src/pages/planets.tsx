@@ -1,13 +1,18 @@
 
 import FullTable from "../components/table/fulltable";
 
+import Header from "../components/header/header";
+
 import { planetsColumns } from "../types/columns/planets";
 
 
 const Planets = () => {
 
   return (
-    <FullTable endpointPath="planets" columns={planetsColumns} />
+    <div>
+      <Header pageTitle="Planets Table"/>
+      <FullTable endpointPath="planets" columns={planetsColumns} />
+    </div>
   )
 
 };

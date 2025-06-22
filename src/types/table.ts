@@ -11,7 +11,7 @@ export type API_Params = {
   page: number;
   size: number;
   search?: string;
-  dir?: API_Direction;
+  dir: API_Direction;
   sort?: API_Sorting;
 }
 

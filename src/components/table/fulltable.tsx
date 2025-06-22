@@ -56,6 +56,10 @@ const FullTable = ({endpointPath, columns} : FullTableProps) => {
     getAndSetTableContent(1, searchInput, direction);
   }, [direction])
 
+  useEffect(() => {
+    getAndSetTableContent(1, searchInput, direction);
+  }, [sort])
+
   return (
     <div style={{
       padding: '2rem',

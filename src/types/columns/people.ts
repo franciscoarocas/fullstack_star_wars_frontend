@@ -37,5 +37,13 @@ export const peopleColumns: ColumnDef<any>[] = [
   {
     header: 'Gender',
     accessorKey: 'gender'
+  },
+  {
+    header: 'Created',
+    accessorKey: 'created'
+  },
+  {
+    header: 'Edited',
+    accessorKey: 'edited'
   }
 ]

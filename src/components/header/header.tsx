@@ -24,7 +24,7 @@ const Header = ({pageTitle = ""} : HeaderProps) => {
           <h3 style={{marginRight : '1rem', marginBottom : '0'}}>{pageTitle}</h3>
           <Link to="/">
             <Button variant='dark'>
-              Home
+              Go Home
             </Button>
           </Link>
         </Col>

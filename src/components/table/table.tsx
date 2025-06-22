@@ -10,6 +10,8 @@ import Pagination from './pagination';
 
 import type { TableProps } from '../../types/table';
 
+import AlertMessage from '../alert/alert';
+
 
 const Table = ({data, columns, changePage} : TableProps) => {
 
@@ -26,6 +28,12 @@ const Table = ({data, columns, changePage} : TableProps) => {
     },
     getCoreRowModel: getCoreRowModel()
   })
+
+  if (data.items.length === 0) {
+    return (
+      <AlertMessage variant="primary" message="No data available." />
+    )
+  }
 
   return (
     <div>
