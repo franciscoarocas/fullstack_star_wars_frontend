@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import People from './pages/people';
 import Planets from './pages/planets';
-import Error404 from './pages/Error404';
+import Error404 from './pages/error404';
 
 function App() {
 
