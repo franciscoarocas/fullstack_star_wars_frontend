@@ -19,7 +19,8 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package*.json ./
 
 RUN npm install --omit=dev
+RUN npm install -g serve
 
 EXPOSE 4173
 
-CMD ["npx", "vite", "preview", "--host"]
+CMD ["serve", "-s", "dist", "-l", "4173"]
