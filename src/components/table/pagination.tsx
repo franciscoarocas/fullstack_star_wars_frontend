@@ -3,6 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 import type { paginationProps } from '../../types/pagination';
 
+
 const TablePagination = ({currentPage, numPages, changePage} : paginationProps) => {
 
   const generatePaginatorItems = (currentPage : number, numPages : number, changePage : Function) => {
@@ -25,15 +26,11 @@ const TablePagination = ({currentPage, numPages, changePage} : paginationProps) 
 
   return (
     <Pagination>
-      <Pagination.First />
-      <Pagination.Prev />
-      <Pagination.Item>{1}</Pagination.Item>
-      <Pagination.Ellipsis />
+      <Pagination.First onClick={() => changePage(1)}/>
+      <Pagination.Prev onClick={() => changePage(Math.max(currentPage - 1, 1))}/>
       {generatePaginatorItems(currentPage, numPages, changePage)}
-      <Pagination.Ellipsis />
-      <Pagination.Item>{numPages}</Pagination.Item>
-      <Pagination.Next />
-      <Pagination.Last />
+      <Pagination.Next onClick={() => changePage(Math.min(currentPage + 1, numPages))}/>
+      <Pagination.Last onClick={() => changePage(numPages)}/>
     </Pagination>
   );
 }
