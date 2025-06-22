@@ -1,7 +1,8 @@
 
 import Form from 'react-bootstrap/Form';
+import type { SortSelectProps } from '../../types/sort';
 
-const Sort = ({onChange}) => {
+const Sort = ({onChange} : SortSelectProps) => {
 
   return (
     <Form.Select aria-label="Default select example" onChange={(e) => onChange(e.target.value)}>
