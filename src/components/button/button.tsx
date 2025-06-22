@@ -3,10 +3,10 @@ import { Button as ReactButtom } from "react-bootstrap";
 
 import type { buttonProps } from "../../types/button";
 
-const Button = ({children} : buttonProps) => {
+const Button = ({children , variant = 'light'} : buttonProps) => {
 
     return (
-        <ReactButtom variant="light" size="lg">
+        <ReactButtom variant={variant} size="lg">
             {children}
         </ReactButtom>
     )

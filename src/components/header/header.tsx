@@ -5,6 +5,11 @@ import type { HeaderProps } from '../../types/header';
 
 import { Row, Col, Container } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom';
+
+import Button from '../button/button';
+
+
 const Header = ({pageTitle = ""} : HeaderProps) => {
 
   return (
@@ -15,8 +20,13 @@ const Header = ({pageTitle = ""} : HeaderProps) => {
             <Logo/>
           </div>
         </Col>
-        <Col>
-          {pageTitle}
+        <Col style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <h3 style={{marginRight : '1rem', marginBottom : '0'}}>{pageTitle}</h3>
+          <Link to="/">
+            <Button variant='dark'>
+              Home
+            </Button>
+          </Link>
         </Col>
       </Row>
     </Container>

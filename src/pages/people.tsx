@@ -10,7 +10,7 @@ const People = () => {
 
   return (
     <div>
-      <Header/>
+      <Header pageTitle="People Table"/>
       <FullTable endpointPath="people" columns={peopleColumns} />
     </div>
   )

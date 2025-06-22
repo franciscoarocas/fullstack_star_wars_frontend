@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 
 import Table from './table';
 import SearchBar from '../searchBar/searchBar';
-
+import Sort from '../sort/sort';
 import Direction from '../direction/direction';
 
 import HttpClient from '../../api/default';
 
-import type { API_Params, API_Direction } from '../../types/table';
+import type { API_Params, API_Direction, API_Sorting } from '../../types/table';
 
 import Loader from '../loader/loader';
 
@@ -27,11 +27,12 @@ const FullTable = ({endpointPath, columns} : FullTableProps) => {
   const [page, setPage] = useState<number>(1);
   const [searchInput, setSearchInput] = useState<string>('');
   const [direction, setDirection] = useState<API_Direction>('asc');
+  const [sort, setSort] = useState<API_Sorting>(); // Default sort by name
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getAndSetTableContent = (page : number, searchInput : string, direction : API_Direction) => {
     setIsLoading(true);
-    const params : API_Params = {page : page, size : 15, dir : direction};
+    const params : API_Params = {page : page, size : 15, dir : direction, sort : sort};
     if (searchInput !== '') {
       params['search'] = searchInput;
     }
@@ -61,10 +62,13 @@ const FullTable = ({endpointPath, columns} : FullTableProps) => {
       height: '100%'
     }}>
     <Row>
-      <Col>
+      <Col md={3}>
         <Direction onChange={(value: string) => setDirection(value as API_Direction)}/>
       </Col>
-      <Col>
+      <Col md={3}>
+        <Sort onChange={(value: string | undefined) => setSort(value as API_Sorting)}/>
+      </Col>
+      <Col md={6}>
         <SearchBar value={searchInput} onChange ={setSearchInput}/>
       </Col>
     </Row>
