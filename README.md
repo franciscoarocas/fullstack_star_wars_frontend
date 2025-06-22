@@ -1,3 +1,21 @@
+# Create environment file
+Copy the **.env.example** file, and change **VITE_API_URL** variable pointing to the backend URL
+
+# Use with Docker
+To create the image:
+```bash
+docker build my-image-front .
+```
+
+To execute frontend Docker Container use:
+```bash
+docker run -p 4173:4173 my-image-front
+```
+
+This is if you want to use in the 4173 port
+
+**REMEMBER:** To add this url to the backend CORS env configuration
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
