@@ -24,7 +24,14 @@ const Home = () => {
         borderBottomLeftRadius: '4px',
         borderBottomRightRadius: '4px'
       }}>
-        <Logo type='home' />
+        <Logo type='home'/>
+          <div style={{paddingTop : '10px'}}>
+            <Link to="/prompt">
+              <Button>
+                Go to IA Prompt
+              </Button>
+            </Link>
+          </div>
       </div>
       <Row style={{
         height: '100%',
