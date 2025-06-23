@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Table from './table';
 import SearchBar from '../searchBar/searchBar';
 import Sort from '../sort/sort';
-import Direction from '../direction/direction';
+import Direction from '../direction/Direction';
 
 import HttpClient from '../../api/default';
 

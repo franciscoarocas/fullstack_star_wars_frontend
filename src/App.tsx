@@ -8,7 +8,7 @@ import Home from './pages/home'
 import People from './pages/people';
 import Planets from './pages/planets';
 import Prompt from './pages/prompt';
-import Error404 from './pages/error404';
+import Error404 from './pages/Error404';
 
 function App() {
 

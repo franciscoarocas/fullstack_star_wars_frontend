@@ -34,7 +34,7 @@ const Prompt = () => {
       <Row>
         <Col>
           <Form.Group>
-            <Form.Control value={text} as="textarea" rows={3} disabled style={{minHeight : '300px'}}/>
+            <Form.Control value={isLoading ? 'Loading...' : text} as="textarea" rows={3} disabled style={{minHeight : '300px'}}/>
           </Form.Group>
           <InputGroup style={{marginTop: '10px'}}>
             <Form.Control onChange={(e) => { setQuestion(e.target.value) }} value={question} placeholder="Write a question about name or planet..." />
