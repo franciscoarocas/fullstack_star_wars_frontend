@@ -12,20 +12,20 @@ import { Link } from 'react-router-dom'
 
 import Logo from '../components/logo/logo';
 
+import './home.css';
+
 const Home = () => {
+  /*
+    The Home component serves as the landing page of the application.
+    It provides links to navigate to the People and Planets pages,
+    as well as a link to the IA Prompt page.
+  */
 
   return (
-    <Container fluid style={{ height : '100%'}}>
-      <div style={{
-        position: 'absolute',
-        'top' : 0,
-        'left' : '50%',
-        transform: 'translateX(-50%)',
-        borderBottomLeftRadius: '4px',
-        borderBottomRightRadius: '4px'
-      }}>
+    <Container fluid className="home-container">
+      <div className="home">
         <Logo type='home'/>
-          <div style={{paddingTop : '10px'}}>
+          <div className='button-link'>
             <Link to="/prompt">
               <Button>
                 Go to IA Prompt
@@ -33,36 +33,15 @@ const Home = () => {
             </Link>
           </div>
       </div>
-      <Row style={{
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-        <Col style={{
-          backgroundImage: `url(${background_people})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+      <Row className='home-row'>
+        <Col className='people-col' style={{ backgroundImage: `url(${background_people})` }}>
           <Link to="/people">
             <Button>
               People
             </Button>
           </Link>
         </Col>
-        <Col style={{
-          backgroundImage: `url(${background_planets})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+        <Col className='planets-col' style={{backgroundImage: `url(${background_planets})`}}>
           <Link to="/planets">
             <Button>
               Planets
