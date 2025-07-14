@@ -7,6 +7,10 @@ import Header from '../components/header/header';
 
 
 const People = () => {
+  /*
+    The People component renders a table of people data.
+    It uses the FullTable component to display the data fetched from the "people" endpoint.
+  */
 
   return (
     <div>

@@ -7,6 +7,10 @@ import { planetsColumns } from "../types/columns/planets";
 
 
 const Planets = () => {
+  /*
+    The Planets component renders a table of planets data.
+    It uses the FullTable component to display the data fetched from the "planets" endpoint.
+  */
 
   return (
     <div>

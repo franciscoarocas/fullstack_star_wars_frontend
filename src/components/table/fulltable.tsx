@@ -4,17 +4,16 @@ import { useState, useEffect } from 'react';
 import Table from './table';
 import SearchBar from '../searchBar/searchBar';
 import Sort from '../sort/sort';
-import Direction from '../direction/Direction';
+import Direction from '../direction/direction';
 
 import HttpClient from '../../api/default';
 
-import type { API_Params, API_Direction, API_Sorting } from '../../types/table';
+import type { API_Params, API_Direction, API_Sorting, FullTableProps } from '../../types/table';
 
 import Loader from '../loader/loader';
 
 import { Row, Col } from 'react-bootstrap';
 
-import type { FullTableProps } from '../../types/table';
 
 
 const API_URL = import.meta.env.VITE_API_URL
@@ -50,15 +49,7 @@ const FullTable = ({endpointPath, columns} : FullTableProps) => {
 
   useEffect(() => {
     getAndSetTableContent(1, searchInput, direction);
-  }, [searchInput])
-
-  useEffect(() => {
-    getAndSetTableContent(1, searchInput, direction);
-  }, [direction])
-
-  useEffect(() => {
-    getAndSetTableContent(1, searchInput, direction);
-  }, [sort])
+  }, [searchInput, direction, sort])
 
   return (
     <div style={{
